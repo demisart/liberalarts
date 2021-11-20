@@ -36,6 +36,49 @@ div.desc {
   text-align: center;
 }
 </style>
+
+<!-- ========================SEARCH FILTER==================== -->	
+
+<script src="jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<style>
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 20px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+li {
+	font-family: Meyrio;
+	font-size: 40px;
+}
+</style>
 	
 	</head>
 
@@ -65,137 +108,16 @@ div.desc {
 </center>
 <div>
 <pre>
-	<a href="../../../grammar.html">文法</a> ➜ <a href="../../verb.html">動詞</a> ➜ <a href="../godan.html"><span>五段動詞</span></a> ➜ <span id="borda">～つ</span> <a href="LIST/list.html"><span style='border: 2px solid black; background: blue;'><font color="white"> 完全なリスト </font></span></a>
+	<a href="../../../grammar.html">文法</a> ➜ <a href="../../verb.html">動詞</a> ➜ <a href="../godan.html"><span>五段動詞</span></a> ➜ <span id="borda">～つ</span>
 </pre>
-<a href="tsugodan.html">
-<div class="gallery" style="background: yellow;width: 350px;">
-  <div class="desc"><ruby><span id="borda">相</span><rt><font color="#F66026">そう</font></rt></ruby><span id="borda">・アスペクト</span> <br> <span id="letra">Aspectos</span> </div>
-</div>
-</a>
 
-<a href="tsugodanresultative.html">
-<div class="gallery" style="background: #D3E06D;width: 350px;">
-  <div class="desc"><ruby><span id="borda">結果動詞</span><rt><font color="#F66026">けっかどうし</font></rt></ruby> <br> <span id="letra">Verbos resultativos</span> </div>
-</div>
-</a>
+<input id="myInput" type="text" placeholder="Pesquisar">
 
-<a href="tsugodancollocation.html">
-<div class="gallery" style="background: #D3E06D;">
-  <div class="desc"><ruby><span id="borda">連語</span><rt><font color="#F66026">れんご</font></rt></ruby><span id="borda">・コロケーション</span> <br> <span id="letra">Combinações frequentes</span> </div>
-</div>
-</a>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>辞書形<rt><font color="#F66026">じしょけい</font></rt></ruby> <br> （<span id="letra">Forma do dicionário</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>つ <br> <span id="letra">Esperar</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>非過去<rt><font color="#F66026">ひかこ</font></rt></ruby> <br> （<span id="letra">Não-Passado</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>つ <br> <span id="letra">Espero</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>たない <br> <span id="letra">Não espero</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>ちます <br> <span id="letra">Espero</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>ちません <br> <span id="letra">Não espero</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>過去<rt><font color="#F66026">かこ</font></rt></ruby> <br> （<span id="letra">Passado</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>った  <br> <span id="letra">Esperei</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>たなかった  <br> <span id="letra">Não esperei</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>ちました  <br> <span id="letra">Esperei</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>ちませんでした  <br> <span id="letra">Não esperei</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white">テ<ruby>形<rt><font color="#F66026">けい</font></rt></ruby> <br> （<span id="letra">Forma TE</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>って  <br> <span id="letra">Esperar...</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>たなくて  <br> <span id="letra">Não esperar...</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>進行形<rt><font color="#F66026">しんこうけい</font></rt></ruby> <br> （<span id="letra">Progressivo</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>っている  <br> <span id="letra">Estou esperando</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>っていない  <br> <span id="letra">Não estou esperando</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>っています  <br> <span id="letra">Estou esperando</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>っていません  <br> <span id="letra">Não estou esperando</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>可能形<rt><font color="#F66026">かのうけい</font></rt></ruby> <br> （<span id="letra">Potencial</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>てる  <br> <span id="letra">Consigo esperar</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>てない  <br> <span id="letra">Não consigo esperar</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>てます  <br> <span id="letra">Consigo esperar</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>てません  <br> <span id="letra">Não consigo esperar</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>意向形<rt><font color="#F66026">いこうけい</font></rt></ruby> <br> （<span id="letra">Volitivo</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>とう  <br> <span id="letra">Vamos esperar</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>ちましょう  <br> <span id="letra">Vamos esperar</span> </div>
-</div>
+<ol id="myList">
+  <li><ruby>勝<rt><font color="#F66026">か</font></rt></ruby>つ <font face="Andika">(Vencer)</font> </font> </a> </li>
+  <li><ruby>待<rt><font color="#F66026">ま</font></rt></ruby>つ <font face="Andika">(Esperar)</font> </font> </a> </li>
+  <li><ruby>持<rt><font color="#F66026">も</font></rt></ruby>つ <font face="Andika">(Possuir)</font> </font> </a> </li>
+</ol>
 
 </div>
 

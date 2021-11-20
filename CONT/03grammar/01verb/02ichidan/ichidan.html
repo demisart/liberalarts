@@ -36,6 +36,49 @@ div.desc {
   text-align: center;
 }
 </style>
+
+<!-- ========================SEARCH FILTER==================== -->	
+
+<script src="jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<style>
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 20px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+li {
+	font-family: Meyrio;
+	font-size: 40px;
+}
+</style>
 	
 	</head>
 
@@ -65,137 +108,20 @@ div.desc {
 </center>
 <div>
 <pre>
-	<a href="../../grammar.html">文法</a> ➜ <a href="../verb.html">動詞</a> ➜ <span id="borda">一段動詞</span> <a href="LIST/list.html"><span style='border: 2px solid black; background: blue;'><font color="white"> 完全なリスト </font></span></a>
+	<a href="../../grammar.html">文法</a> ➜ <a href="../verb.html">動詞</a> ➜ <span id="borda">一段動詞</span>
 </pre>
-<a href="ichidan.html">
-<div class="gallery" style="background: yellow;width: 350px;">
-  <div class="desc"><ruby><span id="borda">相</span><rt><font color="#F66026">そう</font></rt></ruby><span id="borda">・アスペクト</span> <br> <span id="letra">Aspectos</span> </div>
-</div>
-</a>
 
-<a href="ichidanresultative.html">
-<div class="gallery" style="background: #D3E06D;width: 350px;">
-  <div class="desc"><ruby><span id="borda">結果動詞</span><rt><font color="#F66026">けっかどうし</font></rt></ruby> <br> <span id="letra">Verbos resultativos</span> </div>
-</div>
-</a>
+<input id="myInput" type="text" placeholder="Pesquisar">
 
-<a href="ichidancollocation.html">
-<div class="gallery" style="background: #D3E06D;">
-  <div class="desc"><ruby><span id="borda">連語</span><rt><font color="#F66026">れんご</font></rt></ruby><span id="borda">・コロケーション</span> <br> <span id="letra">Combinações frequentes</span> </div>
-</div>
-</a>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>辞書形<rt><font color="#F66026">じしょけい</font></rt></ruby> <br> （<span id="letra">Forma do dicionário</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>る <br> <span id="letra">Ver</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>非過去<rt><font color="#F66026">ひかこ</font></rt></ruby> <br> （<span id="letra">Não-Passado</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>る <br> <span id="letra">Vejo</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>ない <br> <span id="letra">Não vejo</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>ます <br> <span id="letra">Vejo</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>ません <br> <span id="letra">Não vejo</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>過去<rt><font color="#F66026">かこ</font></rt></ruby> <br> （<span id="letra">Passado</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>た  <br> <span id="letra">Vi</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>なかった  <br> <span id="letra">Não vi</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>ました  <br> <span id="letra">Vi</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>ませんでした  <br> <span id="letra">Não vi</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white">テ<ruby>形<rt><font color="#F66026">けい</font></rt></ruby> <br> （<span id="letra">Forma TE</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>て  <br> <span id="letra">Ver...</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>なくて  <br> <span id="letra">Não ver...</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>進行形<rt><font color="#F66026">しんこうけい</font></rt></ruby> <br> （<span id="letra">Progressivo</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>ている  <br> <span id="letra">Estou vendo</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>ていない  <br> <span id="letra">Não estou vendo</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>ています  <br> <span id="letra">Estou vendo</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>ていません  <br> <span id="letra">Não estou vendo</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>可能形<rt><font color="#F66026">かのうけい</font></rt></ruby> <br> （<span id="letra">Potencial</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>られる  <br> <span id="letra">Consigo ver</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>られない  <br> <span id="letra">Não consigo ver</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>られます  <br> <span id="letra">Consigo ver</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>られません  <br> <span id="letra">Não consigo ver</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>意向形<rt><font color="#F66026">いこうけい</font></rt></ruby> <br> （<span id="letra">Volitivo</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>よう  <br> <span id="letra">Vamos ver</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>見<rt><font color="#F66026">み</font></rt></ruby>ましょう  <br> <span id="letra">Vamos ver</span> </div>
-</div>
+<ol id="myList">
+  <li><ruby>入<rt><font color="#F66026">い</font></rt></ruby>れる <font face="Andika">(Por)</font> </font> </a> </li>
+  <li><ruby>得<rt><font color="#F66026">え</font></rt></ruby>る <font face="Andika">(Conseguir; obter)</font> </font> </a> </li>
+  <li><ruby>尽<rt><font color="#F66026">つ</font></rt></ruby>きる <font face="Andika">(Ser consumido)</font> </font> </a> </li>
+  <li><ruby>付<rt><font color="#F66026">つ</font></rt></ruby>ける <font face="Andika">(Juntar)</font> </font> </a> </li>
+  <li><ruby>寝<rt><font color="#F66026">ね</font></rt></ruby>る <font face="Andika">(Dormir)</font> </font> </a> </li>
+  <li><ruby>見<rt><font color="#F66026">み</font></rt></ruby>る <font face="Andika">(Ver)</font> </font> </a> </li>
+  <li><ruby>求<rt><font color="#F66026">もと</font></rt></ruby>める <font face="Andika">(Ir atrás; buscar)</font> </font> </a> </li>
+</ol>
 
 </div>
 

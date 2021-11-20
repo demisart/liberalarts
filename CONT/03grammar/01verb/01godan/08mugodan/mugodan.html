@@ -36,6 +36,49 @@ div.desc {
   text-align: center;
 }
 </style>
+
+<!-- ========================SEARCH FILTER==================== -->	
+
+<script src="jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<style>
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 20px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+li {
+	font-family: Meyrio;
+	font-size: 40px;
+}
+</style>
 	
 	</head>
 
@@ -65,137 +108,16 @@ div.desc {
 </center>
 <div>
 <pre>
-	<a href="../../../grammar.html">文法</a> ➜ <a href="../../verb.html">動詞</a> ➜ <a href="../godan.html"><span>五段動詞</span></a> ➜ <span id="borda">～む</span> <a href="LIST/list.html"><span style='border: 2px solid black; background: blue;'><font color="white"> 完全なリスト </font></span></a>
+	<a href="../../../grammar.html">文法</a> ➜ <a href="../../verb.html">動詞</a> ➜ <a href="../godan.html"><span>五段動詞</span></a> ➜ <span id="borda">～む</span>
 </pre>
-<a href="mugodan.html">
-<div class="gallery" style="background: yellow;width: 350px;">
-  <div class="desc"><ruby><span id="borda">相</span><rt><font color="#F66026">そう</font></rt></ruby><span id="borda">・アスペクト</span> <br> <span id="letra">Aspectos</span> </div>
-</div>
-</a>
 
-<a href="mugodanresultative.html">
-<div class="gallery" style="background: #D3E06D;width: 350px;">
-  <div class="desc"><ruby><span id="borda">結果動詞</span><rt><font color="#F66026">けっかどうし</font></rt></ruby> <br> <span id="letra">Verbos resultativos</span> </div>
-</div>
-</a>
+<input id="myInput" type="text" placeholder="Pesquisar">
 
-<a href="mugodancollocation.html">
-<div class="gallery" style="background: #D3E06D;">
-  <div class="desc"><ruby><span id="borda">連語</span><rt><font color="#F66026">れんご</font></rt></ruby><span id="borda">・コロケーション</span> <br> <span id="letra">Combinações frequentes</span> </div>
-</div>
-</a>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>辞書形<rt><font color="#F66026">じしょけい</font></rt></ruby> <br> （<span id="letra">Forma do dicionário</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>む <br> <span id="letra">Ler</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>非過去<rt><font color="#F66026">ひかこ</font></rt></ruby> <br> （<span id="letra">Não-Passado</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>む <br> <span id="letra">Leio</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>まない <br> <span id="letra">Não leio</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>みます <br> <span id="letra">Leio</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>みません <br> <span id="letra">Não leio</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>過去<rt><font color="#F66026">かこ</font></rt></ruby> <br> （<span id="letra">Passado</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>んだ   <br> <span id="letra">Li</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>まなかった  <br> <span id="letra">Não li</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>みました  <br> <span id="letra">Li</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>みませんでした  <br> <span id="letra">Não li</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white">テ<ruby>形<rt><font color="#F66026">けい</font></rt></ruby> <br> （<span id="letra">Forma TE</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>んで  <br> <span id="letra">Ler...</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>まなくて  <br> <span id="letra">Não ler...</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>進行形<rt><font color="#F66026">しんこうけい</font></rt></ruby> <br> （<span id="letra">Progressivo</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>んでいる  <br> <span id="letra">Estou lendo</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>んでいない  <br> <span id="letra">Não estou lendo</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>んでいます  <br> <span id="letra">Estou lendo</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>んでいません  <br> <span id="letra">Não estou lendo</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>可能形<rt><font color="#F66026">かのうけい</font></rt></ruby> <br> （<span id="letra">Potencial</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>める  <br> <span id="letra">Consigo ler</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>めない  <br> <span id="letra">Não consigo ler</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>めます  <br> <span id="letra">Consigo ler</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>めません  <br> <span id="letra">Não consigo ler</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>意向形<rt><font color="#F66026">いこうけい</font></rt></ruby> <br> （<span id="letra">Volitivo</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>もう  <br> <span id="letra">Vamos ler</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>みましょう  <br> <span id="letra">Vamos ler</span> </div>
-</div>
+<ol id="myList">
+  <li><ruby>噛<rt><font color="#F66026">か</font></rt></ruby>む <font face="Andika">(Mastigar)</font> </font> </a> </li>
+  <li><ruby>飲<rt><font color="#F66026">の</font></rt></ruby>む <font face="Andika">(Beber)</font> </font> </a> </li>
+  <li><ruby>読<rt><font color="#F66026">よ</font></rt></ruby>む <font face="Andika">(Ler)</font> </font> </a> </li>
+</ol>
 
 </div>
 

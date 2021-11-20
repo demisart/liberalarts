@@ -35,6 +35,49 @@ div.desc {
   text-align: center;
 }
 </style>
+
+<!-- ========================SEARCH FILTER==================== -->	
+
+<script src="jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<style>
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 20px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+li {
+	font-family: Meyrio;
+	font-size: 40px;
+}
+</style>
 	
 	</head>
 
@@ -64,85 +107,15 @@ div.desc {
 </center>
 <div>
 <pre>
-	<a href="../grammar.html">文法</a> ➜ <span id="borda">形容詞</span> <a href="LIST/list.html"><span style='border: 2px solid black; background: blue;'><font color="white"> 完全なリスト </font></span></a>
+	<a href="../grammar.html">文法</a> ➜ <span id="borda">形容詞</span>
 </pre>
-<a href="iadjective.html">
-<div class="gallery" style="background: yellow;width: 350px;">
-  <div class="desc"><ruby><span id="borda">相</span><rt><font color="#F66026">そう</font></rt></ruby><span id="borda">・アスペクト</span> <br> <span id="letra">Aspectos</span> </div>
-</div>
-</a>
 
-<a href="iadjectiveresultative.html">
-<div class="gallery" style="background: #D3E06D;width: 350px;">
-  <div class="desc"><ruby><span id="borda">結果構文</span><rt><font color="#F66026">けっかこうぶん</font></rt></ruby> <br> <span id="letra">Construções resultativas</span> </div>
-</div>
-</a>
+<input id="myInput" type="text" placeholder="Pesquisar">
 
-<a href="iadjectivecollocation.html">
-<div class="gallery" style="background: #D3E06D;">
-  <div class="desc"><ruby><span id="borda">連語</span><rt><font color="#F66026">れんご</font></rt></ruby><span id="borda">・コロケーション</span> <br> <span id="letra">Combinações frequentes</span> </div>
-</div>
-</a>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>辞書形<rt><font color="#F66026">じしょけい</font></rt></ruby> <br> （<span id="letra">Forma do dicionário</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>白<rt><font color="#F66026">しろ</font></rt></ruby>い <br> <span id="letra">Branco</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>非過去<rt><font color="#F66026">ひかこ</font></rt></ruby> <br> （<span id="letra">Não-Passado</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>白<rt><font color="#F66026">しろ</font></rt></ruby>い <br> <span id="letra">É branco</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>白<rt><font color="#F66026">しろ</font></rt></ruby>くない <br> <span id="letra">Não é branco</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>白<rt><font color="#F66026">しろ</font></rt></ruby>いです <br> <span id="letra">É branco</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>白<rt><font color="#F66026">しろ</font></rt></ruby>くないです <br> <span id="letra">Não é branco</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>過去<rt><font color="#F66026">かこ</font></rt></ruby> <br> （<span id="letra">Passado</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>白<rt><font color="#F66026">しろ</font></rt></ruby>かった  <br> <span id="letra">Era branco</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>白<rt><font color="#F66026">しろ</font></rt></ruby>くなかった  <br> <span id="letra">Não era branco</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>白<rt><font color="#F66026">しろ</font></rt></ruby>かったです  <br> <span id="letra">Era branco</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>白<rt><font color="#F66026">しろ</font></rt></ruby>くなかったです  <br> <span id="letra">Não era branco</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white">テ<ruby>形<rt><font color="#F66026">けい</font></rt></ruby> <br> （<span id="letra">Forma TE</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>白<rt><font color="#F66026">しろ</font></rt></ruby>くて  <br> <span id="letra">Ser branco...</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>白<rt><font color="#F66026">しろ</font></rt></ruby>くなくて  <br> <span id="letra">Não ser branco...</span> </div>
-</div>
+<ol id="myList">
+  <li><ruby>青<rt><font color="#F66026">あお</font></rt></ruby>い <font face="Andika">(Azul)</font> </font> </a> </li>
+  <li><ruby>白<rt><font color="#F66026">し</font></rt></ruby>ろい <font face="Andika">(Branco)</font> </font> </a> </li>
+</ol>
 
 </div>
 

@@ -36,6 +36,49 @@ div.desc {
   text-align: center;
 }
 </style>
+
+<!-- ========================SEARCH FILTER==================== -->	
+
+<script src="jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<style>
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 20px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+li {
+	font-family: Meyrio;
+	font-size: 40px;
+}
+</style>
 	
 	</head>
 
@@ -65,137 +108,16 @@ div.desc {
 </center>
 <div>
 <pre>
-	<a href="../../../grammar.html">文法</a> ➜ <a href="../../verb.html">動詞</a> ➜ <a href="../godan.html"><span>五段動詞</span></a> ➜ <span id="borda">～ぐ</span> <a href="LIST/list.html"><span style='border: 2px solid black; background: blue;'><font color="white"> 完全なリスト </font></span></a>
+	<a href="../../../grammar.html">文法</a> ➜ <a href="../../verb.html">動詞</a> ➜ <a href="../godan.html"><span>五段動詞</span></a> ➜ <span id="borda">～ぐ</span>
 </pre>
-<a href="gugodan.html">
-<div class="gallery" style="background: yellow;width: 350px;">
-  <div class="desc"><ruby><span id="borda">相</span><rt><font color="#F66026">そう</font></rt></ruby><span id="borda">・アスペクト</span> <br> <span id="letra">Aspectos</span> </div>
-</div>
-</a>
 
-<a href="gugodanresultative.html">
-<div class="gallery" style="background: #D3E06D;width: 350px;">
-  <div class="desc"><ruby><span id="borda">結果動詞</span><rt><font color="#F66026">けっかどうし</font></rt></ruby> <br> <span id="letra">Verbos resultativos</span> </div>
-</div>
-</a>
+<input id="myInput" type="text" placeholder="Pesquisar">
 
-<a href="gugodancollocation.html">
-<div class="gallery" style="background: #D3E06D;">
-  <div class="desc"><ruby><span id="borda">連語</span><rt><font color="#F66026">れんご</font></rt></ruby><span id="borda">・コロケーション</span> <br> <span id="letra">Combinações frequentes</span> </div>
-</div>
-</a>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>辞書形<rt><font color="#F66026">じしょけい</font></rt></ruby> <br> （<span id="letra">Forma do dicionário</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>ぐ <br> <span id="letra">Nadar</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>非過去<rt><font color="#F66026">ひかこ</font></rt></ruby> <br> （<span id="letra">Não-Passado</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>ぐ <br> <span id="letra">Nado</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>がない <br> <span id="letra">Não nado</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>ぎます <br> <span id="letra">Nado</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>ぎません <br> <span id="letra">Não nado</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>過去<rt><font color="#F66026">かこ</font></rt></ruby> <br> （<span id="letra">Passado</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>いだ  <br> <span id="letra">Nadei</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>がなかった  <br> <span id="letra">Não nadei</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>ぎました  <br> <span id="letra">Nadei</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>ぎませんでした  <br> <span id="letra">Não nadei</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white">テ<ruby>形<rt><font color="#F66026">けい</font></rt></ruby> <br> （<span id="letra">Forma TE</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>いで  <br> <span id="letra">Nadar...</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>がなくて  <br> <span id="letra">Não nadar...</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>進行形<rt><font color="#F66026">しんこうけい</font></rt></ruby> <br> （<span id="letra">Progressivo</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>いでいる  <br> <span id="letra">Estou nadando</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>いでいない  <br> <span id="letra">Não estou nadando</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>いでいます  <br> <span id="letra">Estou nadando</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>いでいません  <br> <span id="letra">Não estou nadando</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>可能形<rt><font color="#F66026">かのうけい</font></rt></ruby> <br> （<span id="letra">Potencial</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>げる  <br> <span id="letra">Consigo nadar</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>げない  <br> <span id="letra">Não consigo nadar</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>げます  <br> <span id="letra">Consigo nadar</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>げません  <br> <span id="letra">Não consigo nadar</span> </div>
-</div>
-
-<div class="gallery" style="background: black;">
-  <div class="desc"> <font color="white"><ruby>意向形<rt><font color="#F66026">いこうけい</font></rt></ruby> <br> （<span id="letra">Volitivo</span>）</font> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>ごう  <br> <span id="letra">Vamos nadar</span> </div>
-</div>
-
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>ぎましょう  <br> <span id="letra">Vamos nadar</span> </div>
-</div>
+<ol id="myList">
+  <li><ruby>扇<rt><font color="#F66026">あお</font></rt></ruby>ぐ <font face="Andika">(Abanar)</font> </font> </a> </li>
+  <li><ruby>急<rt><font color="#F66026">いそ</font></rt></ruby>ぐ <font face="Andika">(Apressar-se)</font> </font> </a> </li>
+  <li><ruby>泳<rt><font color="#F66026">およ</font></rt></ruby>ぐ <font face="Andika">(Nadar)</font> </font> </a> </li>
+</ol>
 
 </div>
 

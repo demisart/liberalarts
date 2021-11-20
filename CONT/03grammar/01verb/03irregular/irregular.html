@@ -36,6 +36,49 @@ div.desc {
   text-align: center;
 }
 </style>
+
+<!-- ========================SEARCH FILTER==================== -->	
+
+<script src="jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<style>
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 20px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+li {
+	font-family: Meyrio;
+	font-size: 40px;
+}
+</style>
 	
 	</head>
 
@@ -67,17 +110,13 @@ div.desc {
 <pre>
 	<a href="../../grammar.html">文法</a> ➜ <a href="../verb.html">動詞</a> ➜ <span id="borda">変格動詞</span>
 </pre>
-<a href="come/come.html">
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>来<rt><font color="#F66026">く</font></rt></ruby>る <br> <span id="letra">Vir</span> </div>
-</div>
-</a>
 
-<a href="do/do.html">
-<div class="gallery" style="background: white;">
-  <div class="desc"><ruby>す<rt><font color="#F66026"></font></rt></ruby>る <br> <span id="letra">Fazer</span> </div>
-</div>
-</a>
+<input id="myInput" type="text" placeholder="Pesquisar">
+
+<ol id="myList">
+  <li><ruby>来<rt><font color="#F66026">く</font></rt></ruby>る <font face="Andika">(Vir)</font> </font> </a> </li>
+  <li><ruby>す<rt><font color="#F66026"></font></rt></ruby>る <font face="Andika">(Fazer)</font> </font> </a> </li>
+</ol>
 
 </div>
 

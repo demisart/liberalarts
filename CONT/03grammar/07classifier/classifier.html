@@ -35,6 +35,49 @@ div.desc {
   text-align: center;
 }
 </style>
+
+<!-- ========================SEARCH FILTER==================== -->	
+
+<script src="jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<style>
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 20px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+li {
+	font-family: Meyrio;
+	font-size: 40px;
+}
+</style>
 	
 	</head>
 
@@ -67,289 +110,11 @@ div.desc {
 	<a href="../grammar.html">文法</a> ➜ <span id="borda">助数詞</span>
 </pre>
 
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>あ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>い<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>う<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>え<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>お<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>か<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>き<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>く<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>け<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>こ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>さ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>し<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>す<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>せ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>そ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>た<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ち<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>つ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>て<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>と<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>な<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>に<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ぬ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ね<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>の<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>は<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ひ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ふ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>へ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ほ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ま<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>み<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>む<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>め<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>も<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>や<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ゆ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>よ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ら<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>り<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>る<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>れ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ろ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>わ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>を<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ん<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>が<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ぎ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ぐ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>げ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ご<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ざ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>じ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ず<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ぜ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ぞ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>だ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ぢ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>づ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>で<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ど<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ば<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>び<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ぶ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>べ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ぼ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ぱ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ぴ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ぷ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ぺ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
-
-<div class="gallery" style="background: red;">
-  <div class="desc"><ruby>ぽ<rt><font color="#F66026"></font></rt></ruby> </div>
-</div>
+<input id="myInput" type="text" placeholder="Pesquisar">
+
+<ol id="myList">
+  <li><ruby>人<rt><font color="#F66026">にん</font></rt></ruby> <font face="Andika">(Pessoa)</font> </font> </a> </li>
+</ol>
 
 </div>
 
